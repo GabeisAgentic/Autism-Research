@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: Innovations in Clinical Psychology Tools for Neurodiversity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- 
+        Infographic Plan:
+        1. Hero: Title, Intro
+        2. Market Boom: Sizes & Growth (Neurocognitive, AI in Mental Health, Other Segments - CAGR comparison, EHR Dominance)
+        3. Tech Revolution: Drivers, Emerging Tech (AI, VR, Gamification, Wearables)
+        4. Assessment Landscape: Major Platforms (simplified table-like cards), Innovative Tools (spotlight cards)
+        5. Documentation Solutions: EHRs (key features), AI Report Writers (key features), AI vs. EHR comparison
+        6. Critical Crossroads: Challenges (Regulatory, Validation, Ethics, Adoption - using icons/HTML)
+        7. Path Forward: Unmet Needs, Recommendations (bulleted lists)
+        8. Conclusion: Future Outlook
+
+        Visualization Choices (Confirming NO SVG, NO MERMAID JS):
+        - Market Growth (Neurocognitive, AI): Line Charts (Chart.js, Canvas)
+        - CAGR Comparison (Various Markets): Bar Chart (Chart.js, Canvas) - Added datalabels
+        - EHR Dominance (Web/Cloud): Donut Chart (Chart.js, Canvas)
+        - AI Adoption by Psychologists: Donut Chart (Chart.js, Canvas)
+        - Tech Impact, Regulatory Hurdles, Workflow Diagrams: Structured HTML/CSS with Tailwind & Unicode Icons (NO SVG, NO MERMAID JS)
+        - Platform/Tool Spotlights: Styled HTML cards (NO SVG)
+
+        Color Palette Chosen: Energetic & Playful (Primary: #FF6B6B, Secondary: #FFD166, Accent1: #06D6A0, Accent2: #118AB2, Dark Text: #073B4C, Light BG: #F7FAFC, Card BG: #FFFFFF)
+        Confirmation: NEITHER Mermaid JS NOR SVG were used in this output.
+    -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F7FAFC; /* Light BG */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .section-title {
+            color: #073B4C; /* Dark Text */
+        }
+        .stat-number {
+            color: #118AB2; /* Accent2 */
+            font-weight: 700;
+        }
+        .card {
+            background-color: #FFFFFF; /* Card BG */
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .icon-placeholder {
+            font-size: 2rem;
+            margin-right: 0.5rem;
+            color: #06D6A0; /* Accent1 */
+        }
+        .company-link {
+            color: #118AB2; /* Accent2 */
+            text-decoration: underline;
+        }
+        .company-link:hover {
+            color: #06D6A0; /* Accent1 */
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-gradient-to-r from-[#118AB2] to-[#06D6A0] text-white p-8 md:p-12 text-center">
+        <h1 class="text-3xl md:text-5xl font-bold mb-4">Innovations in Clinical Psychology Tools</h1>
+        <p class="text-lg md:text-xl max-w-3xl mx-auto">Exploring the dynamic market of assessment and documentation solutions for neurodiversity, driven by technological advancements and evolving clinical needs.</p>
+    </header>
+
+    <main class="container mx-auto p-4 md:p-8">
+
+        <section id="market-landscape" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">The Burgeoning Market Landscape</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">The demand for specialized psychological tools is rapidly expanding, fueled by increased neurodiversity awareness, technological leaps, and the push for early intervention. This section highlights key market sizes and growth trajectories.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 section-title">Neurocognitive Assessment & Rehab</h3>
+                    <p class="text-gray-600 mb-2">Valued at <span class="stat-number">$13.8 Billion</span> in 2023.</p>
+                    <p class="text-gray-600 mb-4">Projected CAGR of <span class="stat-number">8.67%</span> (2024-2030).</p>
+                    <div class="chart-container" style="height: 250px; max-height: 300px; max-width: 400px;">
+                        <canvas id="neurocognitiveMarketChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">The assessment testing sub-segment is expected to show the most rapid expansion, reflecting a growing need for diagnostic tools.</p>
+                </div>
+
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 section-title">AI in Mental Health Market</h3>
+                    <p class="text-gray-600 mb-2">Valued at <span class="stat-number">$1.8 Billion</span> in 2025.</p>
+                    <p class="text-gray-600 mb-4">Projected to reach <span class="stat-number">$11.84 Billion</span> by 2034 (CAGR <span class="stat-number">24.15%</span>).</p>
+                    <div class="chart-container" style="height: 250px; max-height: 300px; max-width: 400px;">
+                        <canvas id="aiMentalHealthMarketChart"></canvas>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-3">AI is a transformative force, significantly boosting growth across various mental health technology segments.</p>
+                </div>
+                
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 section-title">Comparative Market Growth (CAGR)</h3>
+                     <p class="text-gray-600 mb-4">Different segments within the behavioral health tech market show strong, varied growth potentials.</p>
+                    <div class="chart-container" style="height: 250px; max-height: 300px; max-width: 400px;">
+                        <canvas id="cagrComparisonChart"></canvas>
+                    </div>
+                     <p class="text-sm text-gray-500 mt-3">High CAGRs in AI-specific and cognitive training domains highlight rapid innovation and investment.</p>
+                </div>
+
+                <div class="card md:col-span-1 lg:col-span-3">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 section-title">EHR Market & Cloud Dominance</h3>
+                            <p class="text-gray-600 mb-2">US Behavioral Health EHR market: <span class="stat-number">$316.5M</span> (2024) to <span class="stat-number">$849.73M</span> (2034) (CAGR <span class="stat-number">10.38%</span>).</p>
+                            <p class="text-gray-600 mb-4">Web and cloud-based EHR solutions are dominant, reflecting a shift towards accessible and scalable digital infrastructure.</p>
+                            <p class="text-sm text-gray-500 mt-3">This trend facilitates better data management and remote access capabilities for clinicians.</p>
+                        </div>
+                        <div class="chart-container" style="height: 250px; max-height: 300px; max-width: 300px;">
+                            <canvas id="ehrCloudDominanceChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="emerging-tech" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">The Technological Revolution in Neuroassessment</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">Emerging technologies are not just enhancing existing methods but are forging new paths for diagnosis, assessment, and documentation in neurodiversity.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#FF6B6B]">🧠</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Artificial Intelligence (AI) & ML</h3>
+                    <p class="text-sm text-gray-600">AI is revolutionizing early detection, diagnostic accuracy, and automating documentation. It analyzes complex data from behavior, cognition, and physiology.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#FFD166]">🕶️</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Virtual Reality (VR)</h3>
+                    <p class="text-sm text-gray-600">VR creates immersive, controlled environments for assessing social skills, attention, and executive functions, and for therapeutic interventions.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#06D6A0]">🎮</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Gamification</h3>
+                    <p class="text-sm text-gray-600">Gamified assessments increase engagement, especially for children, making testing more motivating. Balancing fun with psychometric validity is key.</p>
+                </div>
+                <div class="card text-center">
+                     <div class="text-4xl mb-3 text-[#118AB2]">⌚</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Wearable Technology</h3>
+                    <p class="text-sm text-gray-600">Wearables enable continuous, objective monitoring of behavior, physiological responses, and sleep patterns in natural settings, offering rich data.</p>
+                </div>
+            </div>
+            <p class="text-md text-gray-700 mt-6 text-center">The convergence of these technologies promises more holistic, multi-modal assessments, leading to personalized and effective support strategies for neurodivergent individuals.</p>
+        </section>
+        
+        <section id="assessment-tools" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">Navigating the Assessment Tool Landscape</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">A diverse range of digital platforms and specialized tools are available to psychologists for diagnosing and assessing neurodivergent conditions. Early and accurate diagnosis is crucial for timely intervention.</p>
+
+            <h3 class="text-2xl font-semibold mb-4 section-title">Leading Digital Assessment Platforms</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#FF6B6B]"><a href="https://www.pearsonassessments.com/" target="_blank" class="company-link">Pearson</a></h4>
+                    <p class="text-sm text-gray-600"><strong>Q-interactive:</strong> iPad-based for cognitive/academic tests (WISC-V, KTEA-3). Engaging, real-time scoring.</p>
+                    <p class="text-sm text-gray-600 mt-1"><strong>Q-global:</strong> Web-based for scoring/reporting, remote admin for behavioral/emotional measures (Conners 4, BASC-3).</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#FFD166]"><a href="https://www.parinc.com/" target="_blank" class="company-link">PAR, Inc.</a></h4>
+                    <p class="text-sm text-gray-600"><strong>PARiConnect:</strong> Online platform for 80+ assessments (BRIEF2, SRS-2, CAT-A/C). Flexible admin, customizable reports.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#06D6A0]"><a href="https://mhs.com/" target="_blank" class="company-link">MHS</a></h4>
+                    <p class="text-sm text-gray-600"><strong>MAC+:</strong> Online admin, scoring, reporting (Conners 4, ASRS). User-friendly, inventory deducted on report generation.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#118AB2]"><a href="https://www.wpspublish.com/" target="_blank" class="company-link">WPS</a></h4>
+                    <p class="text-sm text-gray-600"><strong>OES:</strong> Online admin/scoring (SRS-2, ADOS-2 scoring, TOD). Pay-per-score model, HIPAA/FERPA compliant.</p>
+                </div>
+            </div>
+            <p class="text-md text-gray-700 mb-8 text-center">While powerful, the use of multiple publisher-specific platforms can lead to fragmentation and administrative overhead for clinicians.</p>
+
+            <h3 class="text-2xl font-semibold mb-4 section-title">Spotlight on Specialized & Innovative Tools</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#FF6B6B]">EarliPoint Evaluation (<a href="https://www.earlitec.com/" target="_blank" class="company-link">EarliTec</a>)</h4>
+                    <p class="text-sm text-gray-600">FDA-authorized eye-tracking tool for early autism diagnosis (16-30 months). Objective, reduces language/cultural bias.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#FFD166]"><a href="https://www.brainfx.com/" target="_blank" class="company-link">BrainFx</a></h4>
+                    <p class="text-sm text-gray-600">Digital cognitive assessments using a "Neurofunctional approach." Measures 30+ cognitive skills in real-world contexts.</p>
+                </div>
+                <div class="card">
+                    <h4 class="text-lg font-bold mb-2 text-[#06D6A0]"><a href="https://www.shoorah.io/" target="_blank" class="company-link">Shoorah</a></h4>
+                    <p class="text-sm text-gray-600">Digital self-assessments for neurodivergent traits (Autism, ADHD, Dyslexia) with AI-based personalized recommendations.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="documentation-tools" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">Streamlining Clinical Documentation & Reporting</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">Efficient and comprehensive documentation is vital. EHR systems and AI-powered tools are transforming this time-consuming aspect of clinical practice.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 section-title">Behavioral Health EHR Systems</h3>
+                    <p class="text-gray-700 mb-4">EHRs provide centralized platforms for patient records, scheduling, billing, and clinical notes. Key players include:</p>
+                    <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li><strong>TherapyNotes:</strong> User-friendly, psychology-specific templates, AI scribe "TherapyFuel".</li>
+                        <li><strong>SimplePractice:</strong> Customizable templates, Wiley Planners integration, measurement-based care tools.</li>
+                        <li><strong>ICANotes:</strong> Menu-driven, point-and-click interface, 75+ integrated rating scales.</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-3">Effective integration of standardized assessment data into EHR narratives remains a key area for improvement.</p>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 section-title">AI-Powered Report Writing Tools</h3>
+                    <p class="text-gray-700 mb-4">Specialized AI tools leverage LLMs and NLP to automate transcription, summarization, and drafting of narrative reports.</p>
+                     <ul class="list-disc list-inside space-y-2 text-gray-600">
+                        <li><strong>PatientNotes:</strong> Generates notes, summaries, and reports (ADHD, Autism, Neuropsych) from voice/text.</li>
+                        <li><strong>PsychAssist.ai:</strong> Automates full assessment workflow, customizable for various conditions.</li>
+                        <li><strong>School Psychological Report Writer AI Enhanced:</strong> AI-generates report text and assists in test interpretation for school psychologists.</li>
+                    </ul>
+                    <p class="text-sm text-gray-500 mt-3">Clinician oversight is critical to ensure accuracy and ethical integrity of AI-generated reports.</p>
+                </div>
+            </div>
+            
+            <div class="card mt-8">
+                 <h3 class="text-xl font-semibold mb-3 section-title text-center">AI Report Writers vs. Traditional EHR Documentation</h3>
+                 <div class="flex flex-col md:flex-row justify-around items-start gap-6">
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg text-[#FF6B6B] mb-2">AI Report Writers</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Advanced narrative generation</li>
+                            <li>Specialized for complex reports</li>
+                            <li>Potential for significant time savings</li>
+                            <li>Challenge: EHR integration</li>
+                        </ul>
+                    </div>
+                    <div class="w-px bg-gray-300 self-stretch hidden md:block"></div>
+                    <div class="flex-1">
+                        <h4 class="font-semibold text-lg text-[#118AB2] mb-2">EHR Documentation</h4>
+                        <ul class="list-disc list-inside text-sm text-gray-600 space-y-1">
+                            <li>Integrated workflow (single platform)</li>
+                            <li>Standard templates available</li>
+                            <li>May lack sophistication for complex reports</li>
+                            <li>Can lead to "robotic" language</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-center text-gray-700 mt-4">The "integration imperative" is key: AI tools need robust, bi-directional EHR integration to maximize value.</p>
+            </div>
+
+        </section>
+
+        <section id="critical-considerations" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">Critical Considerations for Market Success</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">Navigating regulatory landscapes, ensuring validation, upholding ethics, and understanding clinician adoption are vital for success in this evolving market.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#FF6B6B]">⚖️</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Regulatory & Compliance</h3>
+                    <p class="text-sm text-gray-600">FDA oversight for SaMD (AI/ML tools), HIPAA for data privacy, and state laws like CCPA/CPRA are crucial. FDA authorization can be a competitive moat.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#FFD166]">🔬</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Psychometric Validation</h3>
+                    <p class="text-sm text-gray-600">Rigorous validation (reliability, validity, fairness) per AERA/APA/NCME standards is essential. AI tools need transparency and diverse training data.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#06D6A0]">🤝</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Ethical Imperatives</h3>
+                    <p class="text-sm text-gray-600">Addressing algorithmic bias, ensuring data security/privacy (especially for neural data), and responsible use of VR/wearables are paramount.</p>
+                </div>
+                <div class="card text-center">
+                    <div class="text-4xl mb-3 text-[#118AB2]">📈</div>
+                    <h3 class="text-lg font-semibold mb-2 section-title">Clinician Adoption</h3>
+                    <p class="text-sm text-gray-600">Driven by efficiency and accuracy; hindered by cost, learning curve, and privacy concerns. Only 1 in 10 psychologists use AI monthly for admin/notes.</p>
+                </div>
+            </div>
+             <div class="card mt-6">
+                <h3 class="text-xl font-semibold mb-3 section-title text-center">AI Adoption by Psychologists</h3>
+                <p class="text-gray-600 mb-4 text-center">Current adoption rates for AI in administrative tasks or note-taking among psychologists are still emerging.</p>
+                <div class="chart-container mx-auto" style="height: 250px; max-height: 300px; max-width: 300px;">
+                    <canvas id="aiAdoptionChart"></canvas>
+                </div>
+                <p class="text-sm text-gray-500 mt-3 text-center">Building trust through transparency, validation, compliance, and clinician control is key for AI tool developers.</p>
+            </div>
+        </section>
+        
+        <section id="strategic-insights" class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 text-center section-title">Strategic Insights & The Path Forward</h2>
+            <p class="text-lg text-gray-700 mb-8 text-center max-w-2xl mx-auto">The future points towards a synergistic integration of human expertise with sophisticated digital tools to deliver more personalized, efficient, and equitable psychological care.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 section-title">Key Opportunities & Unmet Needs</h3>
+                    <ul class="list-none space-y-3">
+                        <li class="flex items-start"><span class="icon-placeholder">🌍</span> <span class="text-gray-700">Culturally sensitive, bias-free assessment tools.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">🧩</span> <span class="text-gray-700">Improved differential diagnosis for overlapping conditions (e.g., ASD/ADHD).</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">🕹️</span> <span class="text-gray-700">More gamified assessments with robust psychometric validity.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">🔗</span> <span class="text-gray-700">Platforms for integrating multi-modal data (behavioral, cognitive, physiological).</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">💻</span> <span class="text-gray-700">Seamless EHR integration for AI documentation tools.</span></li>
+                         <li class="flex items-start"><span class="icon-placeholder">📊</span> <span class="text-gray-700">Longitudinal tracking of neurodevelopmental trajectories and treatment outcomes.</span></li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3 class="text-xl font-semibold mb-3 section-title">Recommendations for Development</h3>
+                     <ul class="list-none space-y-3">
+                        <li class="flex items-start"><span class="icon-placeholder">🛡️</span> <span class="text-gray-700"><strong>Prioritize Rigorous Validation:</strong> Adhere to standards, consult regulatory bodies early.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">👥</span> <span class="text-gray-700"><strong>Embrace User-Centered & Inclusive Design:</strong> Involve clinicians and neurodivergent individuals.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">💡</span> <span class="text-gray-700"><strong>Invest in Explainable AI (XAI):</strong> Make AI reasoning transparent to build trust.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">🔄</span> <span class="text-gray-700"><strong>Focus on Seamless EHR Integration:</strong> For documentation tools, this is paramount.</span></li>
+                        <li class="flex items-start"><span class="icon-placeholder">🎯</span> <span class="text-gray-700"><strong>Target Specific Unmet Needs:</strong> Address well-defined clinical problems.</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center py-8 border-t border-gray-300">
+            <p class="text-gray-600">The integration of advanced digital technologies into clinical psychology holds immense promise. Ethical and responsible innovation, augmenting clinician expertise, will be the cornerstone of progress in serving neurodivergent populations.</p>
+            <p class="text-sm text-gray-500 mt-2">Data derived from "Innovations in Clinical Psychology Tools for Neurodiversity – Assessment and Documentation" report.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        Chart.register(ChartDataLabels);
+
+        const primaryColor = '#FF6B6B';
+        const secondaryColor = '#FFD166';
+        const accent1Color = '#06D6A0';
+        const accent2Color = '#118AB2';
+        const darkTextColor = '#073B4C';
+
+        function wrapLabel(label, maxWidth) {
+            if (typeof label !== 'string') return label;
+            if (label.length <= maxWidth) return label;
+            
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            
+            words.forEach(word => {
+                if ((currentLine + word).length > maxWidth && currentLine.length > 0) {
+                    lines.push(currentLine.trim());
+                    currentLine = word + ' ';
+                } else {
+                    currentLine += word + ' ';
+                }
+            });
+            lines.push(currentLine.trim());
+            return lines;
+        }
+
+        const commonChartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: {
+                        color: darkTextColor
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                },
+                datalabels: { // Default datalabels configuration (can be overridden per chart)
+                    color: darkTextColor,
+                    anchor: 'end',
+                    align: 'top',
+                    formatter: (value) => {
+                        return value + '%'; // Example: append '%'
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    ticks: { color: darkTextColor },
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                },
+                x: {
+                    ticks: { color: darkTextColor },
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                }
+            }
+        };
+
+        // Neurocognitive Market Chart
+        const neurocognitiveMarketCtx = document.getElementById('neurocognitiveMarketChart').getContext('2d');
+        new Chart(neurocognitiveMarketCtx, {
+            type: 'line',
+            data: {
+                labels: ['2023', '2030 (Est.)'],
+                datasets: [{
+                    label: 'Market Value (USD Billions)',
+                    data: [13.8, 24.7], 
+                    borderColor: primaryColor,
+                    backgroundColor: 'rgba(255, 107, 107, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {...commonChartOptions, plugins: {...commonChartOptions.plugins, datalabels: { display: false }}} // Disable datalabels for this line chart
+        });
+
+        // AI in Mental Health Market Chart
+        const aiMentalHealthMarketCtx = document.getElementById('aiMentalHealthMarketChart').getContext('2d');
+        new Chart(aiMentalHealthMarketCtx, {
+            type: 'line',
+            data: {
+                labels: ['2025 (Est.)', '2034 (Est.)'],
+                datasets: [{
+                    label: 'Market Value (USD Billions)',
+                    data: [1.80, 11.84],
+                    borderColor: secondaryColor,
+                    backgroundColor: 'rgba(255, 209, 102, 0.2)',
+                    fill: true,
+                    tension: 0.1
+                }]
+            },
+            options: {...commonChartOptions, plugins: {...commonChartOptions.plugins, datalabels: { display: false }}} // Disable datalabels for this line chart
+        });
+
+        // CAGR Comparison Chart
+        const cagrComparisonCtx = document.getElementById('cagrComparisonChart').getContext('2d');
+        const cagrLabels = [
+            wrapLabel('Cognitive Assessment & Training', 16), 
+            wrapLabel('US Behavioral EHR', 16),
+            wrapLabel('Online Psych Testing', 16), 
+            wrapLabel('Neurocognitive Assessment', 16),
+            wrapLabel('Brain Analysis Software', 16)
+        ];
+        new Chart(cagrComparisonCtx, {
+            type: 'bar',
+            data: {
+                labels: cagrLabels,
+                datasets: [{
+                    label: 'CAGR (%)',
+                    data: [26.9, 10.38, 10.2, 8.67, 7.7],
+                    backgroundColor: [primaryColor, secondaryColor, accent1Color, accent2Color, '#EF476F'],
+                }]
+            },
+            options: { 
+                ...commonChartOptions, 
+                indexAxis: 'y',
+                plugins: {
+                    ...commonChartOptions.plugins,
+                    datalabels: {
+                        color: darkTextColor,
+                        anchor: 'center',
+                        align: 'end',
+                        formatter: (value) => {
+                            return value.toFixed(2) + '%'; 
+                        },
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                },
+                scales: {
+                    x: { // For horizontal bar chart, x-axis is value
+                        beginAtZero: true,
+                        ticks: { color: darkTextColor, callback: function(value) { return value + "%"} },
+                        grid: { color: 'rgba(0,0,0,0.05)' }
+                    },
+                    y: { // y-axis is category
+                        ticks: { color: darkTextColor },
+                        grid: { display: false }
+                    }
+                }
+            }
+        });
+        
+        // EHR Cloud Dominance Chart
+        const ehrCloudDominanceCtx = document.getElementById('ehrCloudDominanceChart').getContext('2d');
+        new Chart(ehrCloudDominanceCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Web/Cloud EHR', 'Other EHR Models'],
+                datasets: [{
+                    label: 'EHR Model Distribution',
+                    data: [80, 20], 
+                    backgroundColor: [accent1Color, darkTextColor],
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { color: darkTextColor } },
+                    tooltip: commonChartOptions.plugins.tooltip,
+                    datalabels: {
+                        color: '#fff',
+                         formatter: (value, context) => {
+                            let sum = 0;
+                            let dataArr = context.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = (value*100 / sum).toFixed(1)+"%";
+                            return percentage;
+                        },
+                    }
+                }
+            }
+        });
+
+        // AI Adoption Chart
+        const aiAdoptionCtx = document.getElementById('aiAdoptionChart').getContext('2d');
+        new Chart(aiAdoptionCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Use AI Monthly for Admin/Notes', 'Do Not Use AI Monthly (or less)'],
+                datasets: [{
+                    label: 'AI Adoption by Psychologists',
+                    data: [10, 90], 
+                    backgroundColor: [accent2Color, primaryColor],
+                    hoverOffset: 4
+                }]
+            },
+             options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'top', labels: { color: darkTextColor } },
+                    tooltip: commonChartOptions.plugins.tooltip,
+                    datalabels: {
+                        color: '#fff',
+                         formatter: (value, context) => {
+                            let sum = 0;
+                            let dataArr = context.chart.data.datasets[0].data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = (value*100 / sum).toFixed(1)+"%";
+                            return percentage;
+                        },
+                    }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html> 
